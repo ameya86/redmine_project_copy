@@ -1,0 +1,9 @@
+<% if User.current.allowed_to?(:project_copy, @project) %>
+<%= link_to(l(:button_copy), {:controller => 'projects', :action => 'copy', :id => @project}, :id => 'project_copy_link', :class => 'icon icon-copy') %>
+<% javascript_tag do %>
+var contextuals = $('content').getElementsByClassName('contextual');
+if (null != contextuals && contextuals.length > 0) {
+  contextuals[0].appendChild($('project_copy_link'));
+}
+<% end %>
+<% end %>

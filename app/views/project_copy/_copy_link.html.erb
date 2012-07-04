@@ -1,0 +1,7 @@
+<% if Redmine::VERSION::MAJOR <= 1 %>
+<%# Redmine1.x %>
+<%= render :partial => 'project_copy/copy_link1' %>
+<% else%>
+<%# Redmine2.x %>
+<%= render :partial => 'project_copy/copy_link2' %>
+<% end %>
